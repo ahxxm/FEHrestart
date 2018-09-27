@@ -1,0 +1,48 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+        maven {
+            url "https://jitpack.io"
+        }
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.0'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '28.0.2'
+    defaultConfig {
+        applicationId 'neffez.de.dlrestart'
+        minSdkVersion 26
+        targetSdkVersion 27
+        compileSdkVersion 27
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true // Enables code shrinking for the release build type.
+        }
+    }
+
+    dependencies {
+        implementation "com.android.support:appcompat-v7:27.1.1"
+        // implementation "org.codehaus.groovy:groovy-all:2.4.12"
+    }
+}
+
+repositories {
+    google()
+    jcenter()
+    maven {
+        url "https://jitpack.io"
+    }
+}

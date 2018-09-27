@@ -1,0 +1,11 @@
+.idea/
+.gradle/
+**/.DS_Store
+apk/production
+app/build
+app/release
+build/
+gradle/
+gradlew
+gradlew.bat
+local.properties
