@@ -3,7 +3,7 @@
  * https://github.com/Neffez
  */
 
-package neffez.de.fehrestart;
+package neffez.de.dlrestart;
 
 import android.app.ActivityManager;
 import android.support.v7.app.AppCompatActivity;
@@ -36,17 +36,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void killApp() {
-        ((ActivityManager) getSystemService(ACTIVITY_SERVICE)).killBackgroundProcesses("com.nintendo.zaba");
+        ((ActivityManager) getSystemService(ACTIVITY_SERVICE)).killBackgroundProcesses("com.nintendo.zaga");
     }
 
     private void startApp() {
-        startActivity(getPackageManager().getLaunchIntentForPackage("com.nintendo.zaba"));
+        startActivity(getPackageManager().getLaunchIntentForPackage("com.nintendo.zaga"));
     }
 
     private boolean deleteXml() throws Exception {
         final Process su = Runtime.getRuntime().exec("su");
         final DataOutputStream outputStream = new DataOutputStream(su.getOutputStream());
-        outputStream.writeBytes("rm /data/data/com.nintendo.zaba/shared_prefs/deviceAccount:.xml\n");
+        outputStream.writeBytes("rm /data/data/com.nintendo.zaga/shared_prefs/deviceAccount:.xml\n");
         outputStream.flush();
         outputStream.writeBytes("exit\n");
         outputStream.close();
