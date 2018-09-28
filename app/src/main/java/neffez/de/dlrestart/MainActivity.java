@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         final DataOutputStream outputStream = new DataOutputStream(su.getOutputStream());
         outputStream.writeBytes("rm /data/data/com.nintendo.zaga/shared_prefs/deviceAccount:.xml\n");
         outputStream.flush();
+        outputStream.writeBytes("rm /sdcard/Android/data/com.nintendo.zaga/files/uuid.bin\n");
+        outputStream.flush();
         outputStream.writeBytes("exit\n");
         outputStream.close();
         return su.waitFor() == 0;
